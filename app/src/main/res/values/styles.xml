@@ -1,0 +1,216 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/bg_register</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="spinnerDropDownItemStyle">@style/mySpinnerItemStyle</item>
+        <item name="drawerArrowStyle">@style/WhiteDrawerIconStyle</item>
+    </style>
+
+    <style name="SplashAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+
+    </style>
+
+    <style name="AppThemeNo" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/bg_register</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="spinnerDropDownItemStyle">@style/mySpinnerItemStyle</item>
+
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/input_register</item>
+    </style>
+
+    <style name="CustomTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="textInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="textAllCaps">false</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:layout_marginTop">@dimen/dividerHeight</item>
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/input_register</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+    <style name="textInputLayoutWithoutDivider">
+        <item name="textAllCaps">false</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:layout_marginTop">@dimen/dividerHeight</item>
+    </style>
+
+    <style name="textInputLayoutWithoutDividerLessSpacing">
+        <item name="textAllCaps">false</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:layout_marginTop">@dimen/spacing_medium</item>
+    </style>
+
+    <style name="textInputLayoutPhone">
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:maxLength">10</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="textMedium">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="materialButtontextMedium" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="materialButtonOutlinetextMedium" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="textMediumB">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="textSmall">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="textLarge">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">22dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="fragmentlayout">
+        <item name="android:padding">@dimen/dividerHeight</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="MaterialComponentsNoActionBar" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/bg_register</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="spinnerDropDownItemStyle">@style/mySpinnerItemStyle</item>
+        <item name="drawerArrowStyle">@style/WhiteDrawerIconStyle</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextAppearanceCustom">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <declare-styleable name="BadgedTabLayout">
+        <attr name="badgeTextColor" format="color" />
+        <attr name="badgeTextSize" format="dimension" />
+        <attr name="badgeSelectedTextColor" format="color" />
+        <attr name="badgeBackgroundColor" format="color" />
+        <attr name="badgeSelectedBackgroundColor" format="color" />
+        <attr name="tabTextSize" format="dimension"></attr>
+    </declare-styleable>
+
+    <style name="FormView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="WhiteDrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <style name="defaultButton">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="defaultInputEditText">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="defaultText">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+
+
+    <style name="checkStyle">
+        <item name="android:layout_marginStart">@dimen/dividerHeight</item>
+    </style>
+
+    <style name="PopTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/PopTheme1</item>
+    </style>
+
+    <style name="PopTheme1">
+        <item name="android:windowEnterAnimation">@anim/pop_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+
+    <style name="SideTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/SideTheme1</item>
+    </style>
+
+    <style name="SideTheme1">
+        <item name="android:windowEnterAnimation">@anim/side_in</item>
+        <item name="android:windowExitAnimation">@anim/side_out</item>
+    </style>
+
+    <style name="SlideTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/SlideTheme1</item>
+    </style>
+
+    <style name="SlideTheme1">
+        <item name="android:windowEnterAnimation">@anim/slide_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_out</item>
+    </style>
+<style name="mainlayout">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <color name="grey" />
+</resources>

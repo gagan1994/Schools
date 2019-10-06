@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">School</string>
+
+
+
+
+
+    <string name="error_valid_email">Please enter a valid email</string>
+    <string name="passwordErr">Password should me more  than 4 letters</string>
+
+</resources>
