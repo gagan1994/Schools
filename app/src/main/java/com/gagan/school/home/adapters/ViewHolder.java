@@ -28,17 +28,8 @@ public class ViewHolder extends RvListViewHolder<RvItems> {
         this.mActivity=activity;
     }
 
-    @BindView(R.id.tv_name)
-    TextView name;
-    @BindView(R.id.tv_phone)
-    TextView phone;
-    @BindView(R.id.tv_location)
-    TextView location;
-
     @Override
     public void setData(RvItems rvItems) {
-//        name.setText(rvItems.getName());
-//        phone.setText(rvItems.getPhoneNumber());
-//        location.setText(rvItems.getFullAddress());
+
     }
 }

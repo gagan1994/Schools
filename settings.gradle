@@ -1,1 +1,4 @@
+include ':EasyUpi'
+include ':EasyUpi'
+include ':EasyCardPayment'
 include ':app'

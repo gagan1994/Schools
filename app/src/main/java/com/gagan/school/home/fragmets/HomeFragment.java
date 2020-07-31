@@ -1,6 +1,8 @@
 package com.gagan.school.home.fragmets;
 
+import android.media.Image;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,9 +13,12 @@ import com.gagan.school.home.adapters.SliderAdapterExample;
 import com.gagan.school.library.view.BaseFragment;
 import com.gagan.school.library.view.adapter.OnClickRvItem;
 import com.gagan.school.library.view.adapter.RvItems;
+import com.gagan.school.picassos.CircleTransform;
+import com.gagan.school.picassos.PicassoTrustAll;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +33,9 @@ public class HomeFragment extends BaseFragment {
     SliderView imageSlider;
     @BindView(R.id.rvNews)
     RecyclerView rvNews;
+    @BindView(R.id.profileImage)
+    ImageView imageProfile;
+
     private List<RvItems> tasksList;
     protected RvTaskAdapter adapter;
 
@@ -39,13 +47,14 @@ public class HomeFragment extends BaseFragment {
         }
         return items;
     }
+
     @Override
     protected void onCreatedView(View view) {
         imageSlider.setSliderAdapter(new SliderAdapterExample(getActivity()));
         imageSlider.startAutoCycle();
         imageSlider.setIndicatorAnimation(IndicatorAnimations.WORM);
         imageSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        tasksList=getDummyDatas();
+        tasksList = getDummyDatas();
         adapter = new RvTaskAdapter(tasksList,
                 this,
                 new OnClickRvItem<RvItems>() {
@@ -56,6 +65,10 @@ public class HomeFragment extends BaseFragment {
                 });
         rvNews.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvNews.setAdapter(adapter);
+        Picasso.with(getActivity())
+                .load("https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png")
+                .transform(new CircleTransform())
+                .into(imageProfile);
     }
 
     @Override

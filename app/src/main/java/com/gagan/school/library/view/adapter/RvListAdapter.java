@@ -23,7 +23,7 @@ public abstract class RvListAdapter<T extends RvListViewHolder, S extends RvItem
 
     protected final List<S> mDatas;
     protected final IActivityHelper mContext;
-    private final OnClickRvItem<S> listner;
+    protected final OnClickRvItem<S> listner;
 
     public RvListAdapter(List<S> items, IActivityHelper context, OnClickRvItem<S> listner) {
         this.mDatas = items;
