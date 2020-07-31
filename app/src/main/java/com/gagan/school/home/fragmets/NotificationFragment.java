@@ -10,16 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.gagan.school.R;
 import com.gagan.school.home.adapters.NotificationAdapter;
-import com.gagan.school.home.adapters.RvTaskAdapter;
 import com.gagan.school.home.adapters.model.NotificationModel;
 import com.gagan.school.home.adapters.model.PaymentModel;
 import com.gagan.school.library.utils.Utils;
 import com.gagan.school.library.view.BaseFragment;
 import com.gagan.school.library.view.adapter.OnClickRvItem;
-import com.gagan.school.library.view.adapter.RvItems;
-import com.gagan.school.model.payment.PaymentNotif;
-//import com.gagan.school.payment.PaymentActivity;
-import com.google.gson.Gson;
+import com.gagan.school.payment.PaymentActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,6 +26,8 @@ import butterknife.BindView;
 
 import static android.app.Activity.RESULT_OK;
 import static com.gagan.school.library.utils.Utils.DATE_TIME_FORMAT;
+
+//import com.gagan.school.payment.PaymentActivity;
 
 /**
  * Created by Gagan S Patil on 6/10/19.
@@ -67,7 +65,6 @@ public class NotificationFragment extends BaseFragment {
                     @Override
                     public void onClickItem(NotificationModel object) {
                         if (object.getType().equals(Utils.PAYMENT)) {
-                            PaymentNotif paymentNotif = new Gson().fromJson(object.getData(), PaymentNotif.class);
                             openPayment(object);
                         }
                     }
@@ -77,9 +74,9 @@ public class NotificationFragment extends BaseFragment {
     }
 
     private void openPayment(NotificationModel paymentNotif) {
-//        Intent intent = new Intent(getActivity(), PaymentActivity.class);
-//        intent.putExtra(Utils.PAYMENT_OBJECT, new PaymentModel(paymentNotif));
-//        startActivityForResult(intent, PAYMENT_REQ_CODE);
+        Intent intent = new Intent(getActivity(), PaymentActivity.class);
+        intent.putExtra(Utils.PAYMENT_OBJECT, new PaymentModel(paymentNotif));
+        startActivityForResult(intent, PAYMENT_REQ_CODE);
     }
 
     @Override

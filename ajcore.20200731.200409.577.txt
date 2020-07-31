@@ -1,7 +1,7 @@
 ---- AspectJ Properties ---
 AspectJ Compiler 1.8.6 built on Friday Jun 5, 2015 at 23:41:42 GMT
 ---- Dump Properties ---
-Dump file: ajcore.20200731.185919.347.txt
+Dump file: ajcore.20200731.200409.577.txt
 Dump reason: org.aspectj.apache.bcel.classfile.ClassFormatException
 Dump on exception: true
 Dump at exit condition: abort
