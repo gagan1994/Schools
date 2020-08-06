@@ -131,7 +131,8 @@ public class PaymentActivity extends AppCompatActivity implements PaymentStatusL
         String payeeName = fieldPayeeName.getText().toString();
         String transactionId = paymentObj.getTransactionId();
         String transactionRefId = paymentObj.getTransactionRefId();
-        String description = fieldDescription.getText().toString();
+        String description = fieldDescription.getText() == null
+                ? "" : fieldDescription.getText().toString();
         String amount = paymentObj.getAmount();
 
         // START PAYMENT INITIALIZATION

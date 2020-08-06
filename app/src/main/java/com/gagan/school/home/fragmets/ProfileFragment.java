@@ -38,14 +38,11 @@ public class ProfileFragment extends BaseFragment {
         iconAdapter = new HomeScreenAdapter(Utils.getHomeScreenItems());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(iconAdapter);
-        PicassoTrustAll.getInstance(getActivity())
-                .load("http://www.sarkarinaukrisearch.in/wp-content/uploads/2017/02/boy-profile-images.jpg")
-                .transform(new CircleTransform())
-                .into(profileImage);
-
+        Utils.setProfileImage(getActivity(), profileImage);
     }
+
     public static Bitmap getRoundedRectBitmap(Bitmap bitmap, int pixels) {
-        Bitmap result=null;
+        Bitmap result = null;
         try {
             result = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(),
                     Bitmap.Config.ARGB_8888);
@@ -58,15 +55,17 @@ public class ProfileFragment extends BaseFragment {
 
             paint.setAntiAlias(true);
             canvas.drawARGB(0, 0, 0, 0);
-            paint.setColor( 0xff424242);
+            paint.setColor(0xff424242);
             canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
 
             paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
             canvas.drawBitmap(bitmap, rect, rect, paint);
         } catch (NullPointerException e) {
-        } catch (OutOfMemoryError o){}
+        } catch (OutOfMemoryError o) {
+        }
         return result;
     }
+
     @Override
     public int getLayout() {
         return R.layout.home_layout;

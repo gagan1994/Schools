@@ -8,18 +8,26 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.StyleSpan;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.gagan.easyupi.model.PaymentApp;
 import com.gagan.school.home.adapters.HomeViewItems;
+import com.gagan.school.picassos.CircleTransform;
 import com.gagan.school.roles.ROLE;
 import com.gagan.school.roles.SuperAdmin;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserInfo;
+import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -173,6 +181,16 @@ public class Utils {
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             return false;
+        }
+    }
+
+    public static void setProfileImage(Context activity, ImageView imageProfile) {
+        for (UserInfo item : FirebaseAuth.getInstance().getCurrentUser().getProviderData()) {
+            String avatarUrl = item.getPhotoUrl().toString().replace("s96-c", "s192-c");
+            Picasso.with(activity)
+                    .load(avatarUrl)
+                    .transform(new CircleTransform())
+                    .into(imageProfile);
         }
     }
 }

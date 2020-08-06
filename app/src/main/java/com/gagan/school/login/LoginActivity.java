@@ -1,6 +1,8 @@
 package com.gagan.school.login;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 
 import com.gagan.school.home.MainActivity;
 import com.gagan.school.R;
@@ -28,12 +30,21 @@ public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.emailLayout)
     BaseTextInputLayout emailLayout;
+
     @BindView(R.id.passwordLayout)
     BaseTextInputLayout passwordLayout;
 
+    @BindView(R.id.logIn)
+    View logIn;
 
-    @OnClick(R.id.logIn)
-    public void onLoginClick() {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        logIn.setOnClickListener(this::onLoginClick);
+    }
+
+    public void onLoginClick(View view) {
         int emailErr = ErrorWrappers.validateEmail(emailEt.getText().toString());
         int passwordErr = ErrorWrappers.validatePassword(password.getText().toString());
         setErrorBottom(emailLayout, emailErr);

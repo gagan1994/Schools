@@ -8,13 +8,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gagan.school.R;
+import com.gagan.school.home.MainActivity;
 import com.gagan.school.home.adapters.RvTaskAdapter;
 import com.gagan.school.home.adapters.SliderAdapterExample;
+import com.gagan.school.library.utils.Utils;
 import com.gagan.school.library.view.BaseFragment;
 import com.gagan.school.library.view.adapter.OnClickRvItem;
 import com.gagan.school.library.view.adapter.RvItems;
 import com.gagan.school.picassos.CircleTransform;
 import com.gagan.school.picassos.PicassoTrustAll;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserInfo;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -65,10 +69,13 @@ public class HomeFragment extends BaseFragment {
                 });
         rvNews.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvNews.setAdapter(adapter);
-        Picasso.with(getActivity())
-                .load("https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png")
-                .transform(new CircleTransform())
-                .into(imageProfile);
+        Utils.setProfileImage(getActivity(),imageProfile);
+        imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).addFragmet(new ProfileFragment());
+            }
+        });
     }
 
     @Override

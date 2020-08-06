@@ -67,13 +67,30 @@ public class MainActivity extends BaseActivity {
 
             }
         });
-        List<BaseFragment> fragments=new ArrayList<>();
+        List<BaseFragment> fragments = new ArrayList<>();
         fragments.add(new HomeFragment());
         fragments.add(new GalleryFragment());
         fragments.add(new TrackingFragment());
         fragments.add(new NotificationFragment());
 
-        viewPager.setAdapter(new MainViewPager(this,fragments));
+        viewPager.setAdapter(new MainViewPager(this, fragments));
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
 
